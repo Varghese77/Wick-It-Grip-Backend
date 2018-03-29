@@ -1,0 +1,31 @@
+{
+  "name": "wick-it-grip-backend",
+  "version": "1.0.0",
+  "description": "Package information related to the backend server code of wickitgrip.com",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Varghese77/Wick-It-Grip-Backend.git"
+  },
+  "keywords": [
+    "sweat",
+    "grip",
+    "controller",
+    "game",
+    "gaming",
+    "skin",
+    "start-up"
+  ],
+  "author": "Roy Varghese Mathew",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Varghese77/Wick-It-Grip-Backend/issues"
+  },
+  "homepage": "https://github.com/Varghese77/Wick-It-Grip-Backend#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
