@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/Varghese77/Wick-It-Grip-Backend#readme",
   "dependencies": {
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "request": "^2.85.0"
   }
 }
