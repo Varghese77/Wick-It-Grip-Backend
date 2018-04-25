@@ -11,6 +11,7 @@ var settings = JSON.parse(fs.readFileSync('settings.json', 'utf8'));
 
 // Networking Info
 var port = settings.live == true ? 443 : 3000;
+var server;
 
 // create express app
 var app = express();
@@ -33,18 +34,31 @@ if (settings.live) {
 
   // HTTPS Server
   console.log("Creatting HTTPS Server")
-  var httpsServer = https.createServer(credentials, app).listen(port, function() {
+  server = https.createServer(credentials, app).listen(port, function() {
     console.log('Server is listening on port ' + port);
   });
 } else {
   // Setup Express
   console.log("Creating express server");
   app.use(express.static('public'));
-  var server = http.createServer(app);
+  server = http.createServer(app);
   server.listen(port, function() {
     console.log('Server is listening on port ' + port);
   });
 }
+
+// socket.io Code!!
+const io = require('socket.io')(server);
+function onConnection(socket){
+  socket.on('ping-test', (data) => console.log(data.message));
+  socket.on('message', (data) => {
+    console.log("Name: " + data.name);
+    console.log("Email: " + data.email);
+    console.log("Subject: " + data.subject);
+    console.log("Message: " + data.message);
+  });
+}
+io.on('connection', onConnection);
 
 app.get('/', function(req, res) {
   res.sendfile(__dirname + '/public/index.html');
