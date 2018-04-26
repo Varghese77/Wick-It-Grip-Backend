@@ -49,7 +49,7 @@ submitButton.onclick = function() {  // change event if necessary
     } else {
         // send data to server
         socket.emit("message", dataToSend);
-        resultMessage = "Sucessfully Subscribed!";
+        resultMessage = "Sucessfully Sent Message!";
     }
 
     var subRes= document.getElementById("submit-result");
