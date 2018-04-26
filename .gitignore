@@ -62,4 +62,4 @@ typings/
 
 # manually ignoring files
 settings.json
-data/
+data
