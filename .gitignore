@@ -59,3 +59,7 @@ typings/
 
 # SSL Pem files
 *.pem
+
+# manually ignoring files
+settings.json
+data/
