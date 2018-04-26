@@ -5,11 +5,19 @@ var request = require("request");
 var http = require("http");
 var https = require('https');
 var fs = require("fs");
+const nodemailer = require('nodemailer');
+
+console.log("Before running this file, make sure the values in .");
+console.log("settings.json are correct.");
+
+if (!fs.existsSync("settings.json")) {  // if settings.json doesn't exist
+  console.log("Couldn't find settings.json, exiting now!");
+
+  process.exit();
+}
 
 // read settings json file synchronously
 var settings = JSON.parse(fs.readFileSync('settings.json', 'utf8'));
-
-// Networking Info
 var port = settings.live == true ? 443 : 3000;
 var server;
 
@@ -50,12 +58,20 @@ if (settings.live) {
 // socket.io Code!!
 const io = require('socket.io')(server);
 function onConnection(socket){
-  socket.on('ping-test', (data) => console.log(data.message));
+  socket.on('subscription', (data) => {
+    fs.appendFile("data/subscribers.txt", '\n' + data.message.trim(), (err) => {
+      if (err) {
+        console.log("subscr error!");
+      }
+    })
+  });
+
   socket.on('message', (data) => {
-    console.log("Name: " + data.name);
-    console.log("Email: " + data.email);
-    console.log("Subject: " + data.subject);
-    console.log("Message: " + data.message);
+    fs.appendFile("data/messages.txt", '\n' + JSON.stringify(data), (err) => {
+      if (err) {
+        console.log("subscribtion error!");
+      }
+    })
   });
 }
 io.on('connection', onConnection);
@@ -63,6 +79,5 @@ io.on('connection', onConnection);
 app.get('/', function(req, res) {
   res.sendfile(__dirname + '/public/index.html');
 });
-
 
 console.log('index.js end of file reached!!')

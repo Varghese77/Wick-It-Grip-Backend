@@ -12,7 +12,7 @@ subscribeButton.onclick = function() {  // change event if necessary
 
       if (dataToSend.message != '') {
           // send data to server
-          socket.emit("ping-test", dataToSend)
+          socket.emit("subscription", dataToSend)
           resultMessage = "Sucessfully Subscribed!"
       }
       var subMsg = document.getElementById("sub-message");
@@ -51,4 +51,7 @@ submitButton.onclick = function() {  // change event if necessary
         socket.emit("message", dataToSend);
         resultMessage = "Sucessfully Subscribed!";
     }
+
+    var subRes= document.getElementById("submit-result");
+    subRes.innerText = resultMessage;
 }    
