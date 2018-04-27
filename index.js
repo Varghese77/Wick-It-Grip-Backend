@@ -147,7 +147,7 @@ function onConnection(socket){
       console.log(": Sending message email to self!")
       emailInfo.to = 'wickitgrip@gmail.com';
       emailInfo.subject =  "Website MSG: " + data.subject;
-      emailInfo.text = data.message;
+      emailInfo.text = "From: " + data.name + "\nEmail: " + data.email + "\nMessage Below\n" + data.message;
       emailInfo.attachments = null;
       mailHelper.send(emailInfo);
     })
