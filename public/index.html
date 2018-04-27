@@ -21,8 +21,8 @@
     <!-- CSS
     ================================================== -->
     <script src="js/jquery-3.2.1.min.js"></script>
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/vendor.css">
     <link rel="stylesheet" href="css/main.css">
@@ -102,17 +102,19 @@
         <div class="shadow-overlay"></div>
 
         <div class="home-content">
+            <div class="home-content__main" style="margin-left: 10%">
 
-            <div class="row home-content__main">
-
-                <h3>Welcome to Wick-it Grip</h3>
-
+                <div class="row">
+                    <h3>Welcome to Wick-it Grip</h3>
+                </div>
+                <div class="row">
                 <h1>
                     A sweat-wicking, <br>
                     gaming skin for,<br>
                     the PS4 and XBox <br>
                     controllers.
                 </h1>
+            </div>
 
             </div>
 
@@ -236,42 +238,36 @@
         </div> <!-- end intro-wrap -->
 
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                <!-- Indicators -->
-                <ol class="carousel-indicators">
-                  <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                  <!--
-                  <li data-target="#myCarousel" data-slide-to="1"></li>
-                  <li data-target="#myCarousel" data-slide-to="2"></li>
-                  -->
-                </ol>
-              
-                <!-- Wrapper for slides -->
-                <div class="carousel-inner">
-                  <div class="item active carousel_images">
-                    <img src="images/xbox_logo.jpg" alt="Los Angeles">
-                  </div>
-                  
-                  <!--
-                  <div class="item carousel_images">
-                    <img src="images/portfolio/grow-green.jpg" alt="Chicago">
-                  </div>
-              
-                  <div class="item carousel_images">
-                    <img src="images/portfolio/guitarist.jpg" alt="New York">
-                  </div>
-                  -->
-                </div>
-              
-                <!-- Left and right controls -->
-                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-                  <span class="glyphicon glyphicon-chevron-left"></span>
-                  <span class="sr-only">Previous</span>
-                </a>
-                <a class="right carousel-control" href="#myCarousel" data-slide="next">
-                  <span class="glyphicon glyphicon-chevron-right"></span>
-                  <span class="sr-only">Next</span>
-                </a>
+
+            <!-- Indicators -->
+            <ul class="carousel-indicators">
+              <li data-target="#demo" data-slide-to="0" class="active"></li>
+              <li data-target="#demo" data-slide-to="1"></li>
+              <li data-target="#demo" data-slide-to="2"></li>
+            </ul>
+          
+            <!-- The slideshow -->
+            <div class="carousel-inner">
+              <div class="carousel-item active carousel_images">
+                <img src="images/xbox_logo.jpg" alt="Los Angeles">
               </div>
+              <div class="carousel-item carousel_images">
+                <img src="images/xbox_logo.jpg" alt="Chicago">
+              </div>
+              <div class="carousel-item carousel_images">
+                <img src="images/xbox_logo.jpg" alt="New York">
+              </div>
+            </div>
+          
+            <!-- Left and right controls -->
+            <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+              <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#myCarousel" data-slide="next">
+              <span class="carousel-control-next-icon"></span>
+            </a>
+          
+          </div>
 
     </section>
 
