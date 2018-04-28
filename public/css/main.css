@@ -3644,3 +3644,12 @@ footer .row {
     max-height: 500px;
 }
 
+#buy-now {
+    margin-top: 5%;
+    border-radius: 20px;
+    background-color: rgba(0,0,0,0);
+    color: white;
+}
+#buy-now:hover {
+    background-color: rgba(0,0,0,0.5);
+}
