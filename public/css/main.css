@@ -1257,7 +1257,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     line-height: 1.333;
     text-transform: uppercase;
     letter-spacing: .25rem;
-    color: #9660BA
+    color: white
     ;
     margin-top: 0;
     margin-bottom: 0;
@@ -3636,11 +3636,8 @@ footer .row {
     margin-left: auto;
     margin-right: auto;
     margin-top: -20%;
-    width: 50%;
-}
-
-.carousel_images {
-    max-height: 500px;
+    width: 65%;
+    max-height: 70%;
 }
 
 #buy-now {
